@@ -1,0 +1,339 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat+Alternates:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /* 
+         Change favorite color:
+
+         Default (Red): hsl(358, 80%, 49%)
+         Purple: hsl(265, 80%, 49%) - Blue: hsl(220, 80%, 49%)
+         Pink: hsl(330, 80%, 49%) - Green: hsl(162, 70%, 40%)
+         Orange: hsl(14, 80%, 49%)
+
+         For more colors visit: https://htmlcolorcodes.com/
+         -> Choose any color 
+         -> Copy the color mode (HSL)
+  */
+  --hue: 358;
+  --first-color: hsl(var(--hue), 80%, 49%);
+  --first-color-alt: hsl(var(--hue), 76%, 45%);
+  --light: hsl(0, 0%, 98%);
+  --light: #ECF0F1;
+  --black-color: hsl(0, 0%, 1%);
+  --text-color: hsl(var(--hue), 2%, 66%);
+  --body-color: hsl(var(--hue), 100%, 1%);
+  --container-color: hsl(var(--hue), 2%, 10%);
+  --conic-gradient: conic-gradient(from 150deg at 50% 45%,
+                  hsl(var(--hue), 80%, 20%) 0deg,
+                  hsl(var(--hue), 80%, 48%) 140deg,
+                  hsl(var(--hue), 80%, 20%) 360deg);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat Alternates", sans-serif;
+  --second-font: "Grechen Fuemen", cursive;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+body{
+  background-color: #353434;
+}
+
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1168px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+
+/*=============== BUTTON ===============*/
+/* .button{
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--light);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 2.5rem;
+  border-radius: 4.5rem ;
+  transition: background-color .4s;
+} */
+
+/* .button__black{
+  background-color: var(--black-color);
+}
+
+.button:hover{
+  background-color: var(--first-color-alt);
+} */
+
+/*=============== PROJECTS ===============*/
+
+.project-container {
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+
+.projects__card{
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 2%;
+}
+
+.projects__image{
+  display: block;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.projects__img{
+  transition: transform .4s;
+}
+
+.projects__name{
+  font-size: var(--h3-font-size);
+  margin-bottom: .5rem ;
+}
+
+.projects__description{
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.projects__skill{
+  width: 1rem;
+  transition: transform .4s;
+}
+
+.projects__skill:hover{
+  transform: translateY(-.25rem);
+}
+
+.project__skills{
+  width: max-content;
+  height: 34px;
+  background-color: var(--black-color);
+  padding-inline: .75rem ;
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  border-radius: 4rem;
+}
+
+.projects__button{
+  color: var(--light);
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  transition: color .4s;
+}
+
+.projects__button i{
+  font-size: 1.25rem;
+}
+
+.projects__button span{
+  font-weight: var(--font-medium);
+}
+
+.projects__button:hover{
+  color: var(--text-color);
+}
+
+.projects__card:hover .projects__img{
+  transform: scale(1.2);
+}
+
+.section__title {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+              url('https://source.unsplash.com/1600x900/?modern,parking,technology') 
+              no-repeat center center/cover;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light);
+  border-radius: 16px;
+  position: relative;
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* General Styles */
+:root {
+  --primary-bg: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-color: black;
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* Section Title (Apple-Style Minimalism) */
+/* .section__title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+} */
+
+/* Ticker Container */
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+}
+
+/* Ticker Content (Scrolling Animation) */
+.ticker-content {
+  display: flex;
+  gap: 1.5rem;
+  animation: infiniteScroll 20s linear infinite;
+}
+
+/* Individual Project Card */
+.ticker-item {
+  min-width: 250px;
+  height: 280px;
+  flex: 0 0 auto;
+  background: var(--primary-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 20px var(--shadow);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Hover Effect (Apple-Like Floating Effect) */
+.ticker-item:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Project Image */
+.projects__image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Project Title */
+.projects__name {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Apple-Inspired Infinite Scroll Animation */
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section__title {
+    font-size: 2rem;
+  }
+
+  .ticker-item {
+    min-width: 200px;
+    height: 280px;
+  }
+}
+
+
+.projects__name{
+  color: white;
+}
+/*=============== BREAKPOINTS ===============*/
+
+/* For medium devices */
+@media screen and (max-width: 540px) {
+  .projects__container{
+    grid-template-columns: 380px;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__container{
+    grid-template-columns: repeat(2, 350px);
+    align-items: flex-start;
+  }
+
+  /* .container{
+    justify-content: center;
+  } */
+
+  .perfil{
+    height: 100%;
+  }
+
+  .projects__container{
+    grid-template-columns: repeat(2, 350px);
+  }
+
+}
+
+/* For large devices */
+@media screen and (min-width: 1200px) {
+  .container{
+    margin-inline: auto;
+  }
+
+  .projects__container{
+    grid-template-columns: repeat(3, 368px);
+    gap: 2rem;
+  } 
+
+  .projects__card{
+    padding-bottom: 2rem;
+  }
+
+
+}

@@ -1,0 +1,1780 @@
+/* Global Styles */
+:root {
+  --primary: #2C3E50;
+  --secondary: #34495E;
+  --accent: #3498DB;
+  --success: #27AE60;
+  --danger: #E74C3C;
+  --text: #2C3E50;
+  --light: #ECF0F1;
+  --teal: #2BBBAD;
+  --dark-gray: rgb(45, 44, 44);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ECF0F1;
+  color: var(--text);
+}
+
+a {
+  text-decoration: none !important;
+  color: #ECF0F1 !important;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+}
+
+/* Reusable Styles */
+.button,
+.submit-btn {
+  background: var(--primary);
+  color: #ECF0F1;
+  /* border: none; */
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-input,
+.dropdown {
+  border-radius: 8px;
+  border: 2px solid var(--teal);
+  padding: 10px;
+  width: calc(100% - 22px);
+  background-color: var(--light);
+}
+
+/* Header & Navbar */
+.navbar {
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+              url('https://source.unsplash.com/1600x900/?modern,parking,technology') 
+              no-repeat center center/cover;
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: space-evenly;
+  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+  height: 8vh;
+  position: fixed;
+  z-index: 100000;
+  /* margin-bottom: 100px; */
+}
+
+.header {
+  background: var(--primary);
+  color: #ECF0F1;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  top: 20px;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Parking Lot Section */
+.parking-lot {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.parking-spot {
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: #27AE60;
+}
+
+.parking-spot.available {
+  background-color: #27AE60;
+  color: #ECF0F1;
+}
+
+.parking-spot.occupied {
+  background-color: #E74C3C;
+  color: #ECF0F1;
+  border-radius: 8px;
+}
+
+.parked-vehicle{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.remove-btn{
+  border-radius: 8px ;
+  color: red;
+  background-color: #ECF0F1;
+}
+
+.vehicle-list {
+  background: #ECF0F1;
+  padding: 20px;
+  border-radius: 12px;
+  /* margin-top: 20px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-list ul {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+.vehicle-list li {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #f5f5f5;
+  border-radius: 0.4rem;
+}
+
+/* Image and Content Box */
+.box {
+  margin: 15% auto 3% auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  height: 40vh;
+  border-radius: 3%;
+  background-color: var(--dark-gray);
+}
+
+.image {
+  background-image: url("final_img.webp");
+  background-size: 100% 100%;
+  background-color: rgba(52, 56, 55, 0.975);
+  background-blend-mode: overlay;
+  width: 94%;
+  height: 120vh;
+}
+
+/* Sidebar and Availability Section */
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 120vh;
+  background-color: rgb(80, 80, 80);
+}
+
+
+.avail {
+  margin: 5% auto 3% auto;
+  text-align: center;
+  background-color: rgba(240, 248, 255, 0.505);
+  width: 90%;
+  border-radius: 3%;
+  height: 40vh;
+  display: flex;              /* Enable flexbox */
+  align-items: center;      /* Vertically center content */
+  justify-content: center;  /* Horizontally center content */
+}
+
+/* .avail h1 {
+  font-size: 3em;          
+  font-weight: bold;
+  color: #333;                
+  margin: 0;                 
+} */
+
+.available-number{
+  font-size: 3em;          
+  font-weight: bold;
+  color: #333;                
+  margin: 0;
+}
+
+/* General Styles */
+.about-us-container {
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+              url('https://source.unsplash.com/1600x900/?modern,parking,technology') 
+              no-repeat center center/cover;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light);
+  border-radius: 16px;
+  position: relative;
+}
+
+.hero-section h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.hero-section p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* About Content Section */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 80px;
+  align-items: center;
+}
+
+/* Individual About Box */
+.about-text {
+  background: #f5f5f7;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When in view, make visible */
+.about-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text ul li {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.about-text ul li strong {
+  color: #1a1a1a;
+}
+
+.about-text ul li::before {
+  content: "✔";
+  color: var(--success);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-section {
+    height: 350px;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-text {
+    padding: 30px;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p,
+  .about-text ul li {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Footer */
+.footer {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+              url('https://source.unsplash.com/1600x900/?modern,parking,technology') 
+              no-repeat center center/cover;
+  color: #ECF0F1;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.parking-lot-text{
+  width: 60%;
+  margin: 0 auto;
+  color: #ECF0F1;
+  font-size: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+}
+
+.footer-section h3 {
+  border-bottom: 2px solid rgb(24, 23, 23);
+  padding-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Pie Chart */
+@keyframes growChart {
+  from {
+    background-image: conic-gradient(
+      var(--success) 0%,
+      var(--success) 0%,
+      var(--dark-gray) 0%,
+      var(--dark-gray) 100%
+    );
+  }
+  to {
+    background-image: conic-gradient(
+      var(--success) 0%,
+      var(--success) calc(var(--percentage) * 1%),
+      var(--dark-gray) calc(var(--percentage) * 1%),
+      var(--dark-gray) 100%
+    );
+  }
+}
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: growChart 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.design {
+  width: 60%;
+  height: 60%;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chart-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em; /* Adjust as needed */
+  font-weight: bold;
+  color: var(--light); /* Adjust as needed */
+  z-index: 1; /* Ensure it's above the chart elements */
+}
+
+/* Global styles */
+.how-it-works-container{
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.how-it-works {
+  text-align: center;
+  padding: 0px 20px;
+  background-color: #353434;
+}
+
+.section-title {
+  /* font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000; */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+              url('https://source.unsplash.com/1600x900/?modern,parking,technology') 
+              no-repeat center center/cover;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light);
+  border-radius: 16px;
+  position: relative;
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* Steps container */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Individual step */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--light);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  transition: transform 0.3s ease-in-out, opacity 0.5s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Animated fade-in effect */
+.step.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icon styling */
+.step-icon {
+  font-size: 40px;
+  color: black;
+  margin-bottom: 15px;
+}
+
+/* Text styles */
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+
+/* Utility Classes */
+.space {
+  width: 100%;
+  height: 90vh;
+}
+
+.contain {
+  display: flex;
+}
+
+.reserve-btn{
+  border: 2px solid var(--success) ;
+  background-color: transparent; 
+  color: var(--light);
+  font-size: 1.5rem;
+  /* border: none; */
+  margin: 20px 0px;
+}
+
+/* Hover Effects */
+.reserve-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--light);
+}
+
+a:hover {
+  color: rgb(132, 216, 216) !important;
+}
+
+.parking-spot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-input:hover,
+.dropdown:hover {
+  border-color: #1A9B8D;
+}
+
+.content-wrapper {
+  position: relative;
+  top: 8vh;
+}
+
+.booking-form {
+  position: fixed; /* Overlay the content */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--light);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it's on top */
+  width: 80%;
+  max-width: 500px;
+}
+
+.booking-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking-form label {
+  display: block;
+  margin: 10px;
+}
+
+.booking-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.booking-form .form-buttons {
+  text-align: center;
+}
+
+.booking-form .button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.booking-form .confirm-btn {
+  background-color: var(--success);
+  color: var(--light);
+}
+
+.booking-form .cancel-btn {
+  background-color: var(--danger);
+  color: var(--light);
+}
+
+.level-selector {
+    margin: 20px auto;
+    text-align: center;
+    color: #ECF0F1;
+}
+
+.level-selector label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.level-dropdown {
+    padding: 8px 16px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--teal);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.level-dropdown:hover {
+    border-color: #1A9B8D;
+    transform: translateY(-2px);
+}
+
+.level-dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 155, 141, 0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--teal);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group select:hover,
+.form-group input:hover {
+    border-color: #1A9B8D;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 155, 141, 0.3);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.confirm-btn {
+    background-color: var(--success);
+    color: white;
+}
+
+.cancel-btn {
+    background-color: var(--danger);
+    color: white;
+}
+
+.confirm-btn:hover,
+.cancel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.payment-overlay > div {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+  width: 450px;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  overflow: hidden;
+}
+
+.payment-overlay > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #4F46E5, #7C3AED);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.payment-overlay button {
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.payment-overlay button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment-overlay img {
+  max-width: 220px;
+  height: auto;
+  border: 2px solid #e5e7eb;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.payment-overlay .payment-header {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.payment-overlay .payment-content {
+  padding: 24px;
+}
+
+.payment-overlay .payment-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.payment-overlay .amount-display {
+  background: #f3f4f6;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+.payment-overlay .amount-display p:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.payment-overlay .amount-display p:last-child {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.payment-overlay .payment-methods {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.payment-overlay .payment-method-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  gap: 12px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.payment-overlay .payment-method-btn:hover {
+  border-color: #4F46E5;
+  background: #f5f3ff;
+}
+
+.payment-overlay .payment-method-btn.upi {
+  background: #4F46E5;
+  color: white;
+  border: none;
+}
+
+.payment-overlay .payment-method-btn.upi:hover {
+  background: #4338CA;
+}
+
+.payment-overlay .payment-method-btn.card {
+  background: #2563EB;
+  color: white;
+  border: none;
+}
+
+.payment-overlay .payment-method-btn.card:hover {
+  background: #1D4ED8;
+}
+
+.payment-overlay .action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.payment-overlay .back-btn {
+  padding: 8px 16px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.payment-overlay .confirm-btn {
+  padding: 8px 24px;
+  background: #059669;
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.payment-overlay .confirm-btn:hover {
+  background: #047857;
+}
+
+.payment-overlay .qr-section {
+  text-align: center;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-overlay .qr-section img {
+  max-width: 220px;
+  height: auto;
+  border: 2px solid #e5e7eb;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  display: block;
+}
+
+.payment-overlay .qr-section p {
+  color: #6b7280;
+  margin: 24px 0 0;
+  font-size: 0.875rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.payment-overlay .card-section {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.payment-overlay .card-section svg {
+  margin-bottom: 16px;
+}
+
+.payment-overlay .card-section p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.directions-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.directions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gates-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  position: relative;
+  min-height: 150px;
+}
+
+.gate {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  margin: 0 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gate h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.gate-icon {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.gate-arrow {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.entry-gate {
+  border-left: 4px solid #10b981;
+  margin-bottom: 2rem;
+}
+
+.exit-gate {
+  border-right: 4px solid #ef4444;
+  margin-top: 2rem;
+}
+
+/* Add a connecting line between gates */
+.gates-container::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #10b981, #ef4444);
+  transform: translateX(-50%);
+}
+
+/* Update spots grid to show only selected level */
+.spots-grid {
+  margin: 2rem 0;
+}
+
+.level-section {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.spots-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.spot {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  position: relative;
+  border: 1px solid #e5e7eb;
+}
+
+.spot.available {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+.spot.occupied {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.spot.selected {
+  background: #dcfce7;
+  border: 2px solid #10b981;
+  color: #059669;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.spot-number {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.vehicle-number {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.directions-info {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.directions-list {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+.directions-list li {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.directions-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .directions-page {
+    padding: 1rem;
+  }
+
+  .directions-container {
+    padding: 1rem;
+  }
+
+  .gates-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .gate {
+    margin: 0.5rem 0;
+  }
+
+  .entry-gate, .exit-gate {
+    margin: 0;
+  }
+
+  .gates-container::after {
+    display: none;
+  }
+
+  .spots-row {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}
+
+/* Parking Layout with Split Sides */
+.spots-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.spots-side {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+}
+
+.center-aisle {
+  width: 3rem;
+  background: #e5e7eb;
+  border-radius: 8px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.center-aisle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: #9ca3af;
+}
+
+/* Direction Indicator */
+.direction-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+}
+
+.direction-indicator.left {
+  border-color: #3b82f6;
+}
+
+.direction-indicator.right {
+  border-color: #3b82f6;
+}
+
+.direction-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.direction-indicator span {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.spot {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid #e5e7eb;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.spot.available {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+.spot.occupied {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.spot.selected {
+  background: #dcfce7;
+  border-color: #10b981;
+  color: #059669;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.spot-number {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.vehicle-number {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.spot .remove-btn {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #ef4444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.spot .remove-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .spots-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .center-aisle {
+    width: 100%;
+    height: 3rem;
+  }
+
+  .center-aisle::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .spots-side {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .spot {
+    width: 60px;
+    height: 60px;
+    padding: 0.35rem;
+  }
+
+  .spot-number {
+    font-size: 0.75rem;
+  }
+
+  .vehicle-number {
+    font-size: 0.65rem;
+  }
+
+  .spot .remove-btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.65rem;
+  }
+}
+
+/* Payment Gateway Styling */
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.payment-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease;
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.payment-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ef4444;
+}
+
+.payment-details {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.payment-details p {
+  margin: 0.5rem 0;
+  color: #4b5563;
+}
+
+.payment-amount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #059669;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-method {
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  background: white;
+}
+
+.payment-method:hover {
+  border-color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.1);
+}
+
+.payment-method.selected {
+  border-color: #10b981;
+  background: #dcfce7;
+}
+
+.payment-method img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.payment-method span {
+  display: block;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #10b981;
+  color: white;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pay-button:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.pay-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .spots-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .center-aisle {
+    width: 100%;
+    height: 4rem;
+  }
+
+  .center-aisle::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .spots-side {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .payment-modal {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animated Path */
+.path-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.path-container.show {
+  opacity: 1;
+}
+
+/* Vertical line */
+.path-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: var(--vertical-distance);
+  background: #3b82f6;
+}
+
+/* Animated vertical line that follows the car */
+.path-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--current-height);
+  background: #3b82f6;
+  transform-origin: top;
+  transition: height 0.1s linear;
+}
+
+/* Start dot */
+.path-line::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  top: 0;
+  left: -3px;
+}
+
+/* Turn dot */
+.turn-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  top: var(--vertical-distance);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 5;
+}
+
+.turn-dot.show {
+  opacity: 1;
+  transition: opacity 0.3s ease 1.5s;
+}
+
+/* Horizontal line */
+.horizontal-line {
+  position: absolute;
+  top: var(--vertical-distance);
+  height: 2px;
+  background: #3b82f6;
+  z-index: 4;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.horizontal-line.show {
+  opacity: 1;
+}
+
+.horizontal-line.left {
+  right: 50%;
+  width: var(--horizontal-distance);
+}
+
+.horizontal-line.right {
+  left: 50%;
+  width: var(--horizontal-distance);
+}
+
+/* Animated horizontal line that follows the car */
+.horizontal-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #3b82f6;
+  width: var(--current-width);
+  transition: width 0.1s linear;
+}
+
+.horizontal-line.left::before {
+  right: 0;
+}
+
+.horizontal-line.right::before {
+  left: 0;
+}
+
+.moving-car {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+.moving-car.left {
+  animation: moveCarLeft 3s ease forwards;
+}
+
+.moving-car.right {
+  animation: moveCarRight 3s ease forwards;
+}
+
+@keyframes moveCarLeft {
+  0% {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    --current-height: 0;
+    --current-width: 0;
+  }
+  50% {
+    top: var(--vertical-distance);
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    --current-height: var(--vertical-distance);
+    --current-width: 0;
+  }
+  65% {
+    top: var(--vertical-distance);
+    left: 50%;
+    transform: translateX(-50%) ;
+    --current-height: var(--vertical-distance);
+    --current-width: calc(var(--horizontal-distance) * 0.1);
+  }
+  100% {
+    top: var(--vertical-distance);
+    left: calc(50% - var(--horizontal-distance));
+    transform: translateX(-50%) ;
+    --current-height: var(--vertical-distance);
+    --current-width: var(--horizontal-distance);
+  }
+}
+
+@keyframes moveCarRight {
+  0% {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    --current-height: 0;
+    --current-width: 0;
+  }
+  50% {
+    top: var(--vertical-distance);
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    --current-height: var(--vertical-distance);
+    --current-width: 0;
+  }
+  65% {
+    top: var(--vertical-distance);
+    left: 50%;
+    transform: translateX(-50%) rotateY(180deg);
+    --current-height: var(--vertical-distance);
+    --current-width: calc(var(--horizontal-distance) * 0.1);
+  }
+  100% {
+    top: var(--vertical-distance);
+    left: calc(50% + var(--horizontal-distance));
+    transform: translateX(-50%) rotateY(180deg);
+    --current-height: var(--vertical-distance);
+    --current-width: var(--horizontal-distance);
+  }
+}
+
+/* Update spots container to accommodate the path */
+.spots-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make sure the path appears above the spots */
+.path-container {
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .path-container {
+    height: 150px;
+  }
+
+  .moving-car {
+    font-size: 1.2rem;
+  }
+
+  .moving-car.left {
+    animation: moveCarLeftMobile 3s ease forwards;
+  }
+
+  .moving-car.right {
+    animation: moveCarRightMobile 3s ease forwards;
+  }
+}
+
+@keyframes moveCarLeftMobile {
+  0% {
+    top: 0;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  50% {
+    top: 50%;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  60% {
+    top: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+  }
+  100% {
+    top: 50%;
+    transform: translateX(calc(-50% - 60px)) rotate(-90deg);
+  }
+}
+
+@keyframes moveCarRightMobile {
+  0% {
+    top: 0;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  50% {
+    top: 50%;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  60% {
+    top: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+  100% {
+    top: 50%;
+    transform: translateX(calc(-50% + 60px)) rotate(90deg);
+  }
+}
